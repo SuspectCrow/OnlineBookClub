@@ -1,0 +1,18 @@
+﻿@using OnlineBookClub.WEB.Models.Identity
+
+@model EventDetail
+
+<p>@Model.Event.ISBN</p>
+
+<ul class="list-group">
+    @foreach (var item in Model.EventRatings)
+    {
+        <li class="list-group-item d-flex align-items-centerate-log gap-4 justify-around-between">
+            <img src="~/img/userpictures/@item.User.ProfilePicture" class="rounded-circle" style="width: 1.5rem; height: 1.5rem; object-fit: cover;">
+            @item.User.UserName
+            <strong>RATE: @item.Rating</strong>
+            <small>@item.Description</small>
+            @await Html.PartialAsync("~/Areas/Admin/Views/Shared/PartialViews/_Rating.cshtml", new RatingVM() { EventId = Model.Event.Id, Rate = item.Rating, UserId = item.UserId })
+        </li>
+    }
+</ul>

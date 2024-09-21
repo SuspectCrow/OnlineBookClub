@@ -1,0 +1,23 @@
+﻿@model ErrorViewModel
+@{
+    Layout = "_LayoutBlank";
+    ViewData["Title"] = "Error";
+}
+
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+@* @if (Model.ShowRequestId)
+{
+<p>
+<strong>Request ID:</strong> <code>@Model.RequestId</code>
+</p>
+} *@
+
+<div class="error-page">
+    <div class="error">
+        <h1 class="404 bold">404</h1>
+        <h2 class="bold">oops!, sayfa bulunamadı.</h2>
+        <p>Görünüşe göre böyle bir sayfa bulunmuyor, sayfa silinmiş veya değiştirilmiş olabilir.</p>
+        <a href="/Home/Index">Ana Sayfaya Dön <i class="fa-solid fa-house ml-5"></i></a>
+    </div>
+</div>

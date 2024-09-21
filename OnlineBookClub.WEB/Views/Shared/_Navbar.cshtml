@@ -1,0 +1,56 @@
+﻿@using System.Security.Claims
+
+<nav>
+    <div class="Nav-Logo">
+        <a asp-controller="Home" asp-action="Index"><p>LOGO</p></a>
+    </div>
+
+    <ul>
+        <li><a href="">Kitap Bul</a></li>
+        <li><a href="">Hakkında</a></li>
+        <li><a href="">İletişim</a></li>
+        <li><a asp-area="" asp-controller="Home" asp-action="Calendar">Takvim</a></li>
+        <li><a asp-area="" asp-controller="Event" asp-action="Index">Etkinlikler</a></li>
+        <li><a asp-area="" asp-controller="Home" asp-action="Users">Kullanıcılar</a></li>
+
+        @if (User.Identity!.IsAuthenticated)
+        {
+            <li>
+                <div class="dropdown">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        @{
+                            string userpp = @User.Claims.FirstOrDefault(x => x.Type == "ProfilePicture") != null ? User.Claims.First(x => x.Type == "ProfilePicture").Value : "DefaultUserPicture.jpg";
+                        }
+                        <img src="~/img/userpictures/@userpp" alt="mdo" width="32" height="32" class="rounded-circle" style="object-fit: cover;">
+                        @User.Identity.Name
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" asp-area="" asp-controller="User" asp-action="Index">Profil</a></li>
+                        <li><a class="dropdown-item" asp-area="" asp-controller="User" asp-action="PasswordChange">Şifreni Değiştir</a></li>
+                        <li><a class="dropdown-item" asp-area="" asp-controller="User" asp-action="UserEdit">Ayarlar</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" asp-area="" asp-controller="User" asp-action="Claims">Claims</a></li>
+                        @if (User.HasClaim(ClaimTypes.Role, "Admin"))
+                        {
+                            <li><a asp-area="Admin" asp-controller="Home" asp-action="Index" class="dropdown-item">Admin Sayfası</a></li>
+                        }
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger" asp-area="" asp-controller="User" asp-action="LogOut" asp-route-returnurl="/Home/Index">Çıkış Yap</a></li>
+                    </ul>
+                </div>
+            </li>
+        }
+        else
+        {
+            <li>
+                <a asp-controller="Home" asp-action="LogIn">
+                    <a asp-controller="Home" asp-action="LogIn" class="Nav-Button">Giriş Yap</a>
+                </a>
+
+                <a asp-controller="Home" asp-action="SignUp">
+                    <a asp-controller="Home" asp-action="SignUp" class="Nav-Button">Kayıt Ol</a>
+                </a>
+            </li>
+        }
+    </ul>
+</nav>

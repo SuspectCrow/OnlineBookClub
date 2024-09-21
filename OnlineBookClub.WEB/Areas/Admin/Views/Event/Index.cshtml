@@ -1,0 +1,135 @@
+﻿@using OnlineBookClub.WEB.Models.DB.Event
+@model EventVM
+
+<div class="container">
+
+
+    <button type="button" class="White-Button" data-bs-toggle="modal" data-bs-target="#exampleModal" style="float:right;">
+        Etkinlik Oluştur
+    </button>
+
+    <table class="table align-middle mb-0 bg-white">
+        <thead class="bg-light">
+            <tr>
+                <th class="fw-bold fs-6">Id</th>
+                <th class="fw-bold fs-6">Başlık</th>
+                <th class="fw-bold fs-6">Katılımcılar</th>
+                <th class="fw-bold fs-6">Başlangıç Tarihi</th>
+                <th class="fw-bold fs-6">Konum</th>
+                <th class="fw-bold fs-6">Oluşturan</th>
+                <th class="fw-bold fs-6">Oluşturma Tarihi</th>
+                <th class="fw-bold fs-6">Durum</th>
+                <th class="fw-bold fs-6">Puan</th>
+                <th class="fw-bold fs-6">Sil</th>
+                <th class="fw-bold fs-6">Detay</th>
+            </tr>
+        </thead>
+        <tbody>
+                 @foreach (var item in Model.Events)
+                {
+            <tr>
+                    <td>
+                        @item.Id
+                    </td>
+
+                    <td>
+                        <a asp-area="" asp-controller="Event" asp-action="Details" asp-route-id="@item.Id">@item.Title (@item.ISBN)</a>
+                    </td>
+
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                                 alt=""
+                                 style="width: 20px; height: 20px"
+                                 class="rounded-circle" />
+
+                            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                                 alt=""
+                                 style="width: 20px; height: 20px"
+                                 class="rounded-circle" />
+
+                            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                                 alt=""
+                                 style="width: 20px; height: 20px"
+                                 class="rounded-circle" />
+
+                            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                                 alt=""
+                                 style="width: 20px; height: 20px"
+                                 class="rounded-circle" />
+                        </div>
+                    </td>
+
+                    <td>@item.StartDate.ToString("g")</td>
+
+
+                    <td>
+                        @item.Location.Title
+                    </td>
+
+                    <td>
+                        @(item.CREATED_USER_.Firstname + " " + item.CREATED_USER_.Lastname)
+                        @* @item.CREATED_USER_ID.ToString(); *@
+                    </td>
+
+                    <td>
+                        @item.CREATED_DATE
+                    </td>
+
+                    <td>
+                        @if(item.StartDate < DateTime.UtcNow){
+                            <span class="badge badge-danger rounded-pill d-inline">Pasif</span>
+                        }
+
+                        else
+                        {
+                            <span class="badge badge-success rounded-pill d-inline">Aktif</span>
+                    }
+
+                    </td>
+
+                    <td>
+                        <div class="progress" style="height: 20px; border-radius:10px; width:60px">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: @item.EventRatings%;" aria-valuenow="@item.EventRatings" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </td>
+
+                    <td class="Table-Buttons">@Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "Red-Button", onclick = "return confirm('Gerçekten silmek istiyor musunuz?')" })</td>
+
+                   <td class="Table-Buttons"><a class="Red-Button" asp-action="Detail" asp-route-id="@item.Id">Detay</a></td>
+            </tr>
+            }
+
+
+        </tbody>
+    </table>
+
+
+    <!-- Create Modal -->
+    @await Html.PartialAsync("~/Areas/Admin/Views/Shared/PartialViews/Modals/_EventCreateModal.cshtml", new Event());
+
+ <style>
+.Red-Button {
+        font-weight: 600;
+        font-size: 18px;
+        border-radius: 60px;
+        border: none ;
+        padding: 7px 20px;
+        color: white;
+        background-color: var(--red);
+    }
+
+
+.White-Button {
+        font-weight: 600;
+        font-size: 18px;
+        border-radius: 60px;
+        border: solid 3px var(--red);
+        background-color: white;
+        padding: 7px 20px;
+        color: var(--red);
+    }
+</style>
+@* 
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script> *@

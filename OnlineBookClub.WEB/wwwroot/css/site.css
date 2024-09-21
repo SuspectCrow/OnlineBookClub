@@ -1,0 +1,658 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+html{
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.guide-item {
+  margin-top: 2rem;
+  display: flex;
+  align-items: start;
+  flex-direction: row;
+}
+
+.item-image > img {
+  width: 250px;
+  height: 350px;
+}
+
+.item-creator{
+  color: gray;
+}
+
+.guide-item > .container {
+  gap: 2.5%;
+  padding: 0;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.item-notify-date{
+  line-height: 10px;
+}
+
+.item-details {
+  width: 550px;
+}
+
+.item-footer {
+  display: flex;
+  gap: 5%;
+}
+
+.item-discussion-button{
+  padding: 10px 12px;
+  background-color: rgb(102, 101, 102);
+  color: white;
+  border-radius: 20px;
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  cursor: pointer;
+}
+
+.item-footer > a:hover{
+  background-color: rgb(53, 53, 53);
+  color: #fff;
+  transition: background-color .3s ease-in-out;
+}
+
+
+.item-point i {
+  margin-right: 10px;
+}
+
+.item-point{
+  padding: 8px 12px;
+  width: 100%;
+}
+
+/* Details */
+.details-page{
+  margin-top: 10%;
+}
+
+.book{
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
+  width: 75%;
+}
+
+.book > .book-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.book-creator{
+  color: gray;
+}
+
+.book-button{
+  display: flex;
+}
+
+.book-discussion-button {
+  padding: 10px 25px;
+  background-color: red;
+  color: white;
+  border-radius: 20px;
+}
+
+.book-event-details {
+  padding: 10px 25px;
+  line-height: 10px;
+}
+
+.soon-events-header {
+  color: white;
+  text-align: center;
+}
+
+.soon-event-header{
+  font-size: 2rem;
+  text-align: center;
+}
+
+.soon-events{
+  margin-top: 2%;
+  margin-bottom: 2%;
+  background-color: #00396F;
+  padding: 30px 0;
+}
+
+.events{
+  display: flex;
+  gap: 6%;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.event{
+  background-color:#7a0000;
+  width: 500px;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 20px;
+}
+
+.event-header{
+  font-size: 1.2rem;
+  display: flex;
+  gap: 35%;  /* Başa ve sona tutturmayı yapamadığım için bu şekilde geçtim*/
+}
+
+.event > .event-date{
+  text-align: center;
+}
+
+.discussion-button{
+  text-align: center;
+  padding: 8px 35px;
+  background-color: red;
+  border-radius: 20px;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.button{
+  display: flex;
+  justify-content: center;
+}
+
+.creator-title{
+  text-align: center;
+  font-size: 1.7rem;
+}
+
+.creator-name{
+  text-align: center;
+  font-size: 1.9rem;
+  margin-bottom: 45px;
+}
+
+.creator-books{
+  display: flex;
+}
+
+.creator-book {
+  width: 33.3%;
+  height: 512px;
+  text-align: center;
+}
+
+.creator-book .book-image img {
+  width: 250px;
+  height: 412px;
+}
+
+.creator-book .book-label{
+  margin: 0 100px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.creator-info {
+  color: gray;
+}
+
+.creator-pages{
+  margin-top: 10px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.creator-pages i {
+  margin-right: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: red;
+}
+
+.creator-pages .selected {
+  color: red;
+  background-color: red;
+  border-radius: 100%;
+}
+
+.subscribe-section{
+  background-color: #00396F;
+  color: white;
+  padding: 30px 0;
+  margin-bottom: 60px;
+}
+
+.subsicribe-text{
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.email-subscribe-button{
+  display: flex;
+  justify-content: center;
+}
+
+.email-subscribe-button textarea {
+  border: 1px solid #cfcfcf;
+  width: 400px;
+  height: 50px;
+  padding: 10px 20px;
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+}
+
+.email-subscribe-button textarea:focus {
+  outline: none;
+}
+
+.subscribe-button{
+  padding: 13px 21px;
+  background-color: red;
+  border-radius: 30px;
+  position: absolute;
+  width: 150px;
+  text-align: center;
+  font-size: 1rem;
+  left: 59%;
+  cursor: pointer;
+}
+
+.slide {
+  background-color: #00396F;
+  color: white;
+}
+
+.slide > .container {
+  gap: 3%;
+}
+
+.slide > .container > .slide-texts {
+  margin-top: 10%;
+}
+
+    .slide > .container > .slide-image > img {
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+.filter {
+  display: flex;
+  justify-content: center;
+  padding: 5% 0;
+}
+
+.filter > select {
+  padding: 0.8%;
+  border-radius: 50px;
+}
+
+.guides {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  gap: 10%;
+}
+
+.guides > .book-image > img{
+  width: 312px;
+  height: 512px;
+}
+
+.discussion-group {
+  display: flex;
+  gap: 1%;
+}
+
+.book-details{
+  width: 100%;
+}
+
+.discussion-group > i {
+  color: #00396F;
+  font-size: 1.1rem;
+}
+
+.event-header{
+  display: flex;
+  gap: 15%;
+  justify-content: space-between;
+}
+
+.event-rating {
+  display: flex;
+  gap: 2px;
+}
+
+.event-rating-text {
+  font-size: 14px;
+}
+
+.event-rating > i {
+  color: orange;
+  cursor: pointer;
+  transition: color .3s ease-in-out;
+}
+
+.event-rating > i:hover {
+  color: darkorange;
+}
+
+.event-actions{
+  display: flex;
+  flex-direction: column;
+}
+
+.event-join-button{
+  font-size: 15px;
+  padding: 8px 12px;
+  background-color: #7a0000;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 45px;
+  transition: background-color .1s ease-in-out;
+}
+
+.event-join-button:hover{
+  background-color: red;
+}
+
+.event-logs {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.rate-log > p{
+  line-height: 0;
+}
+
+.question {
+  margin-top: 3%;
+  display: flex;
+  font-size: 14px;
+  gap: 1%;
+}
+
+.question > i {
+  color: #00396F;
+  font-size: 1.3rem;
+}
+
+.event-details-footer{
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.event-teacher {
+  display: flex;
+  color: gray;
+}
+
+.event-teacher > img {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+
+.event-notify {
+  line-height: 10px;
+}
+
+.event-gallery {
+  display: flex;
+  gap: 2%;
+  justify-content: space-between;
+}
+
+.gallery-image{
+  width: 456px;
+  height: 350px;
+}
+
+.gallery-image > img{
+  width: 456px;
+  height: 350px;
+}
+
+.event-details > .creator-pages{
+  margin-top: 50px;
+}
+
+.guides > .book-image > p {
+  margin-top: 8px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.book-image > .book-detail-button{
+  padding: 8px 12px;
+  background-color: #7a0000;
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  transition: background-color .1s ease-in-out;
+}
+
+.book-image > .book-detail-button:hover{
+  background-color: red;
+}
+
+footer {
+  background-color: #00396F;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  color: #fff;
+}
+
+.footer-content{
+  display: flex;
+}
+
+.footer-logo{
+  width: 20%;
+  margin: 1.5%;
+  margin-left: 4.5%;
+  margin-right: 4.5%;
+}
+
+.footer-logo > .footer-logo-text {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration:none;
+    color: #fff;
+    font-size: 35px;
+    font-weight: 800;
+}
+
+.footer-urls {
+  margin: 1.5%;
+  width: 20%;
+}
+
+.footer-urls > a {
+  display: block;
+  line-height: 35px;
+  color: white;
+  transition: color .3s ease-in-out;
+}
+
+.footer-urls > a:hover {
+  color: red;
+}
+
+.footer-urls > a > i {
+  color: red;
+  margin-right: 5px;
+}
+
+.footer-follow{
+  margin: 1.5%;
+  width: 20%;
+}
+
+.footer-search{
+  margin: 1.5%;
+  width: 20%;
+}
+
+.footer-end {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+hr.footer-hr{
+  border: 3px solid white;
+  color: #fff;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.footer-search-area{
+  display: flex;
+  justify-content: start;
+}
+
+.footer-search-area textarea {
+  border: 1px solid #cfcfcf;
+  width: 200px;
+  height: 40px;
+  padding: 6px 20px;
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+}
+
+.footer-search-area textarea:focus{
+  outline: none;
+}
+
+.search-button{
+  padding: 7.5px 0;
+  background-color: red;
+  border-radius: 30px;
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  right: 13rem;;
+  text-align: center;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.users{
+  width: 100%;
+  margin: 0 auto;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.user-placement{
+  background-color: #e0e0e0;
+  padding: 35px 35px;
+  border-radius: 25px;
+  width: 22%;
+  box-shadow: 0 0.5rem 0.5rem #3b3b3bab;
+}
+
+.user-placement > h1 {
+  font-size: 2rem;
+}
+
+.user-placement > .user > .user-image > img {
+  width: 50px;
+  height: 50px;
+}
+
+.user-details{
+  line-height: 15px;
+}
+
+.user-point{
+  margin-top: 1rem;
+  margin-left: 6rem;
+  text-align: center;
+}
+
+.user-point > i{
+  margin-top: 3px;
+  margin-right: 6px;
+}
+
+.users-image {
+  width: 50%;
+  height: 100%;
+}
+
+.users-image > img {
+  width: 70%;
+  height: 100%;
+}
+
+.error-page{
+  width: 100%;
+  height: 100%;
+  background-color: #00396F;
+  color: #fff;
+}
+
+.error {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.error > a{
+  padding: 10px 15px;
+  background-color: #7a0000;
+  color: #fff;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: background .3s ease-in-out;
+}
+
+.error > a:hover{
+  background: #ff0000;
+}
+
+.error > h1 {
+  font-size: 5rem;
+}
+
+.error > h2 {
+  font-size: 3rem;
+}

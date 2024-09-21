@@ -1,0 +1,59 @@
+﻿@using System.Security.Claims
+@model UserVM
+
+@{
+    var userPicture = User.Claims.FirstOrDefault(x => x.Type == "ProfilePicture") != null ? User.Claims.FirstOrDefault(x => x.Type == "ProfilePicture").Value : "DefaultUserPicture.jpg";
+}
+
+<div class="Sidebar">
+    <div class="Sidebar-Area">
+        <div class="Sidebar-Up">
+            <div class="Profile">
+                <img src="~/img/userpictures/@userPicture" style="object-fit: cover;" alt="">
+                <div class="d-flex gap-2">
+                    <p class="mt-5">@Model.Firstname</p>
+                    <p class="mt-5">@Model.Lastname</p>
+                </div>
+            </div>
+
+            <div class="SidebarUpLinks">
+                <ul>
+                    <li><a href="profile.html">Genel Bakış</a></li>
+                    <li><a href="readedbook.html">Okuduğum Kitaplar</a></li>
+                    <li><a href="wantreadbook.html">Okumak İstediğim Kitaplar</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        <div class="Sidebar-Down">
+            <ul>
+                <li>
+                    <h4>Telefon</h4>
+                    <p>@Model.PhoneNumber</p>
+                    <div class="Underline"></div>
+                </li>
+
+                <li>
+                    <h4>E-Posta</h4>
+                    <p>@Model.Email</p>
+                    <div class="Underline"></div>
+                </li>
+
+                <li>
+                    <h4>Okul Numarası</h4>
+                    <p>@Model.SchoolNo</p>
+                    <div class="Underline"></div>
+                </li>
+            </ul>
+
+            <div class="Siderbar-Footer">
+                <ul>
+                    <li><a href="settings.html">Profilimi Düzenle</a></li>
+                    <li><a href="#">Oturumu Kapat</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,118 @@
+﻿@using System.Security.Claims;
+@model EventDetailsVM
+
+
+<div class="details-page">
+    <div class="container">
+        <div class="book">
+            <div class="book-image">
+                <img src="@Model.BookImage" alt="Book Image">
+            </div>
+            <div class="book-details">
+                <h1 class="book-header bold">
+                    @Model.BookName
+                    @if (Model.Event.EventRatings != null && Model.Event.EventRatings.FirstOrDefault(x => x.UserId == User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier).Value) != null)
+                    {
+                        <small style="font-size: 1.3rem; color: forestgreen">(Kayıt Olundu)</small>
+                    }
+                </h1>
+                <p class="book-creator">Mustafa Kemal Atatürk Tarafından</p>
+                <br>
+                <p class="book-brief">@Model.BookDescription</p>
+                <br>
+                <div class="book-button" style="display: flex; align-items: center; gap: 1rem;">
+                    <button class="book-discussion-button bold">Tartışma Kılavuzunu İncele</button>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @if (Model.Event.EventRatings != null && Model.Event.EventRatings.FirstOrDefault(x => x.UserId == User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier).Value) == null)
+                        {
+                            <a asp-area="" asp-controller="Event" asp-action="JoinEvent" asp-route-id="@Model.Event.Id" class="book-discussion-button bold">Yerimi Ayırt</a>
+                        }
+                    }
+                </div>
+                <div class="book-event-details">
+                    <p class="event-count bold">Yapılan Etkinlik Sayısı: 12</p>
+                    <p class="book-count bold">Kitap Adeti: 20</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="soon-events">
+        <div class="container">
+            <div class="soon-events-header">
+                <h1 class="soon-event-header bold">Yakındaki Etkinlikler</h1>
+            </div>
+            <div class="events">
+                <div class="event">
+                    <div class="event-header">
+                        <p class="event-creator">Fatih Şahinbaş</p>
+                        <p class="event-location">Okul Kütüphanesi</p>
+                    </div>
+                    <p class="event-date">19.12.2023 12:00</p>
+                    <div class="button">
+                        <p class="discussion-button">Kılavuzu Görüntüle</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="event-header">
+                        <p class="event-creator">Tamer Gülsoy</p>
+                        <p class="event-location">Okul Kütüphanesi</p>
+                    </div>
+
+                    <p class="event-date">21.12.2023 12:00</p>
+                    <div class="button">
+                        <p class="discussion-button">Kılavuzu Görüntüle</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="creator-details">
+            <h1 class="creator-title">YAZAR</h1>
+            <h1 class="creator-name bold">Musatafa Kemal Atatürk</h1>
+            <div class="creator-books">
+                <div class="creator-book">
+                    <div class="book-image">
+                        <img src="https://cdn.discordapp.com/attachments/1205968232494800897/1206659344247165018/nutuk.png?ex=65dcd016&is=65ca5b16&hm=af8241681877f9e9dcffe9c007d5f3e8b55ebb8120c41ff436f782e35bcb5282&"
+                            alt="Nutuk Görseli">
+                    </div>
+                    <p class="book-label">Nutuk: Gençler için Fotoğraflarla (Turkish Edition)</p>
+                    <p class="creator-info">Mustafa Kemal Atatürk Tarafından</p>
+                </div>
+                <div class="creator-book">
+                    <div class="book-image">
+                        <img src="https://cdn.discordapp.com/attachments/1205968232494800897/1206659344247165018/nutuk.png?ex=65dcd016&is=65ca5b16&hm=af8241681877f9e9dcffe9c007d5f3e8b55ebb8120c41ff436f782e35bcb5282&"
+                            alt="Nutuk Görseli">
+                    </div>
+                    <p class="book-label">Nutuk: Gençler için Fotoğraflarla (Turkish Edition)</p>
+                    <p class="creator-info">Mustafa Kemal Atatürk Tarafından</p>
+                </div>
+                <div class="creator-book">
+                    <div class="book-image">
+                        <img src="https://cdn.discordapp.com/attachments/1205968232494800897/1206659344247165018/nutuk.png?ex=65dcd016&is=65ca5b16&hm=af8241681877f9e9dcffe9c007d5f3e8b55ebb8120c41ff436f782e35bcb5282&"
+                            alt="Nutuk Görseli">
+                    </div>
+                    <p class="book-label">Nutuk: Gençler için Fotoğraflarla (Turkish Edition)</p>
+                    <p class="creator-info">Mustafa Kemal Atatürk Tarafından</p>
+                </div>
+            </div>
+            <div class="creator-pages">
+                <i class="fa-solid fa-circle selected"></i>
+                <i class="fa-regular fa-circle"></i>
+                <i class="fa-regular fa-circle"></i>
+                <i class="fa-regular fa-circle"></i>
+                <i class="fa-regular fa-circle"></i>
+            </div>
+        </div>
+    </div>
+    <div class="subscribe-section">
+        <div class="container">
+            <p class="subsicribe-text bold">Her ay okuma önerileri ve en popüler kitap kulübü kitaplarını içeren Kitap Kuküpleri bültenini almak için e-postanızı girin.</p>
+            <div class="email-subscribe-button">
+                <textarea placeholder="E-Posta Adresi" name="email" id="email" cols="30" rows="10"></textarea>
+                <p class="subscribe-button">Abone Ol</p>
+            </div>
+        </div>
+    </div>
+</div>

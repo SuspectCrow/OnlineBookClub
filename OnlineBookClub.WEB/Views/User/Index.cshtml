@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+@model UserVM
+
+<section>
+    <div class="Select-Group">
+        @await Html.PartialAsync("_ProfileSidebarPartial", Model)
+        <main>
+            <div class="d-flex flex-column">
+                <div class="Badges-Area">
+                    <h1>Rozetler</h1>
+                    <div class="Badges">
+
+                        <div class="Badge">
+                            <img src="~/img/ExampleBadge.png" alt="">
+                            <p>İlk Giriş</p>
+                        </div>
+
+                        <div class="Badge">
+                            <img src="~/img/ExampleBadge.png" alt="">
+                            <p>İlk Giriş</p>
+                        </div>
+
+                        <div class="Badge">
+                            <img src="~/img/ExampleBadge.png" alt="">
+                            <p>İlk Giriş</p>
+                        </div>
+
+
+                        <div class="Badge">
+                            <img src="~/img/ExampleBadge.png" alt="">
+                            <p>İlk Giriş</p>
+                        </div>
+
+                        <div class="Badge">
+                            <img src="~/img/ExampleBadge.png" alt="">
+                            <p>İlk Giriş</p>
+                        </div>
+
+                        <div class="Badge">
+                            <img src="~/img/ExampleBadge.png" alt="">
+                            <p>İlk Giriş</p>
+                        </div>
+
+                        <div class="Badge">
+                            <img src="~/img/ExampleBadge.png" alt="">
+                            <p>İlk Giriş</p>
+                        </div>
+
+                        <div class="Badge">
+                            <img src="~/img/ExampleBadge.png" alt="">
+                            <p>İlk Giriş</p>
+                        </div>
+
+                        <div class="Badge">
+                            <img src="~/img/ExampleBadge.png" alt="">
+                            <p>İlk Giriş</p>
+                        </div>
+
+                        <div class="Badge">
+                            <img src="~/img/ExampleBadge.png" alt="">
+                            <p>İlk Giriş</p>
+                        </div>
+
+                        <div class="Badge">
+                            <img src="~/img/ExampleBadge.png" alt="">
+                            <p>İlk Giriş</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="ReadedBooks">
+                    <div class="BookLine"></div>
+                    <div class="ReadedBooksUp">
+                        <p><i class="fa-solid fa-bookmark" style="color: #00396f;"></i> OKUDUĞUM KİTAPLAR</p>
+
+                        <a href="#"> <i class="fa-solid fa-circle-plus" style="color: #00396f;"></i> KİTAP EKLE</a>
+                    </div>
+
+                    <div class="ReadedBooksDown">
+                        <img src="~/img/No-Book.png" alt="">
+                        <p>Hiç kitabınız yok. <a href="#">Okuduğunuz bir kitabı ekleyin</a></p>
+                    </div>
+                </div>
+
+                <div class="ReadedBooks">
+                    <div class="BookLine"></div>
+                    <div class="ReadedBooksUp">
+                        <p><i class="fa-solid fa-bookmark" style="color: #00396f;"></i> OKUMAK İSTEDİĞİM KİTALAR</p>
+
+                        <a href="#"> <i class="fa-solid fa-circle-plus" style="color: #00396f;"></i> KİTAP EKLE</a>
+                    </div>
+
+                    <div class="ReadedBooksDown">
+                        <img src="~/img/No-Book.png" alt="">
+                        <p>Hiç kitabınız yok. <a href="#">Okuduğunuz bir kitabı ekleyin</a></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</section>

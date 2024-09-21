@@ -1,0 +1,30 @@
+﻿@using System.Security.Claims
+
+@{
+    ViewData["Title"] = "Claims";
+}
+@model List<ClaimVM>
+
+
+<div class="container">
+    <h1 class="d-block">Claims</h1>
+    <table class="table table-striped border rounded-4">
+        <thead>
+            <tr>
+                <th scope="col">Issuer</th>
+                <th scope="col">Type</th>
+                <th scope="col">Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Issuer</td>
+                    <td>@item.Type</td>
+                    <td>@item.Value</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
